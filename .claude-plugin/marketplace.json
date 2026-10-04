@@ -1,0 +1,12 @@
+{
+  "name": "drugalpha",
+  "owner": { "name": "DrugAlpha", "email": "zmxx00@126.com" },
+  "description": "DrugAlpha published company, drug and catalyst research tools.",
+  "plugins": [
+    {
+      "name": "drugalpha",
+      "source": "./plugins/drugalpha-claude",
+      "description": "Identify companies and drugs and query published DrugAlpha catalysts."
+    }
+  ]
+}

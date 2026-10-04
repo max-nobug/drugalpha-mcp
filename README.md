@@ -55,6 +55,21 @@ MCP Registry 元数据与维护说明见 [REGISTRY.md](REGISTRY.md)。登记不�
 
 ## Claude Code 配置（授权与连接已验证，问答待验收）
 
+### GitHub 插件安装
+
+在终端运行：
+
+```sh
+claude plugin marketplace add max-nobug/drugalpha-mcp
+claude plugin install drugalpha@drugalpha
+```
+
+也可以在 Claude Code 会话中使用 `/plugin marketplace add max-nobug/drugalpha-mcp`，再用 `/plugin install drugalpha@drugalpha` 按界面安装。重启会话后在 `/mcp` 中核对插件提供的 DrugAlpha 服务并完成浏览器授权。
+
+这是自建 GitHub 插件目录，不是 Anthropic 官方市场条目。插件包校验、安装与真实问答分别验收；既有手动连接已验证不等于插件问答也已验证。已有手动 DrugAlpha MCP 时先核对重复项，不自动删除旧配置。
+
+### 手动添加远程服务
+
 识别实际使用的 Claude Code 可执行文件，先备份用户配置、检查同名服务，保留其他设置。使用该版本 CLI 帮助确认参数后添加：
 
 ```sh

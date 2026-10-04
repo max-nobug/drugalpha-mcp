@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "drugalpha": { "type": "http", "url": "https://drugalpha.com/mcp" }
+  }
+}

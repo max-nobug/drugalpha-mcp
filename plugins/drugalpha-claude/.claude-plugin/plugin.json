@@ -1,0 +1,14 @@
+{
+  "name": "drugalpha",
+  "version": "0.1.1",
+  "description": "Identify companies and drugs and query published DrugAlpha catalysts.",
+  "author": {
+    "name": "DrugAlpha",
+    "email": "zmxx00@126.com",
+    "url": "https://drugalpha.com/"
+  },
+  "homepage": "https://drugalpha.com/",
+  "repository": "https://github.com/max-nobug/drugalpha-mcp",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
