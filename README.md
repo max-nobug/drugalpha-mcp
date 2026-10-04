@@ -7,7 +7,7 @@
 - 账号：拥有 DrugAlpha 正式内容阅读权限的账号
 - 本版本功能：公司/药物识别、按公司或已确认关联药物查询催化剂
 - 已验证：Codex 桌面内置 CLI 0.159.2，浏览器授权与真实查询（2026-10-04）
-- WorkBuddy / Claude Code：尚未完成客户端登记及实测，不能只填 URL 就宣称接入成功。
+- WorkBuddy / Claude Code：服务器已支持 OAuth 自动注册，客户端真实授权与查询仍待验证。
 
 ## 让 AI 帮你配置
 
@@ -24,6 +24,16 @@
 - Git 拉取：`git clone https://github.com/max-nobug/drugalpha-mcp.git`
 
 无需克隆投研平台代码或安装服务端。下载 ZIP 后解压，或直接让 Agent 阅读仓库中的安装指引即可。
+
+## WorkBuddy 接入验证
+
+服务端已开放标准 OAuth 动态注册，无需使用 Codex 的客户端身份或固定回调端口。以下为待实测配置，不能据此声称 WorkBuddy 已兼容。
+
+```json
+{"mcpServers":{"drugalpha":{"type":"http","url":"https://drugalpha.com/mcp"}}}
+```
+
+请让 Agent 确认 WorkBuddy 实际生效的 MCP 配置位置，备份后只合并 drugalpha 项，保留其他连接。然后在 WorkBuddy 中发起连接，由用户自行完成浏览器登录授权。看到工具列表并真实执行公司识别、催化剂查询后，才能报告连接成功；如失败，反馈脱敏后的错误提示，不发送令牌或完整回调链接。
 
 ## Codex 手动配置
 
