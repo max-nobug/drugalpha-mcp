@@ -36,6 +36,20 @@
 
 请让 Agent 确认 WorkBuddy 实际生效的 MCP 配置位置，备份后只合并 drugalpha 项，保留其他连接。然后在 WorkBuddy 中发起连接，由用户自行完成浏览器登录授权。看到工具列表并真实执行公司识别、催化剂查询后，才能报告连接成功；如失败，反馈脱敏后的错误提示，不发送令牌或完整回调链接。
 
+## Claude Code 配置（待真实验收）
+
+识别实际使用的 Claude Code 可执行文件，先备份用户配置、检查同名服务，保留其他设置。使用该版本 CLI 帮助确认参数后添加：
+
+```sh
+claude mcp add --transport http --scope user drugalpha https://drugalpha.com/mcp
+```
+
+这是用户级配置，跨项目可用；不要复用 Codex 的固定 client_id 或 8900 端口，不填写 API Key。授权使用服务端动态注册。
+
+支持 `mcp login` 的版本可以运行 `claude mcp login drugalpha`；否则启动 Claude Code，在 `/mcp` 中选择 DrugAlpha 并按提示授权。用户自行在 DrugAlpha 浏览器页面登录及确认。随后用 `claude mcp get drugalpha` 核对连接，再开启会话查询“IBI363 后续有哪些催化剂？请注明时间精度和来源。”
+
+仅配置保存或浏览器成功不足以证明真实查询成功；应确认两个工具可见并实际完成实体识别与催化剂查询。Claude Code CLI、VS Code 扩展和 Claude 桌面 Code 入口需按实际客户端分别检查，不假定它们共享全部配置。
+
 ## Codex 手动配置
 
 1. 将 codex.toml 中的配置合并到 Codex 用户配置，通常是 ~/.codex/config.toml。不要覆盖现有文件；同名服务存在时先核对。
