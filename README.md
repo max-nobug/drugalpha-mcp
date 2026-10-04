@@ -18,7 +18,23 @@
 
 > 请读取公共仓库 https://github.com/max-nobug/drugalpha-mcp 中的 README.md 和 INSTALL-AGENT.md，按照指引帮我配置 DrugAlpha MCP。保留已有客户端设置，由我在浏览器完成登录授权，最后验证真实查询是否成功。
 
-## 获取接入包
+## Codex 插件安装（GitHub 自建目录）
+
+在支持插件目录的 Codex 版本中运行：
+
+```sh
+codex plugin marketplace add max-nobug/drugalpha-mcp
+```
+
+然后在插件界面或 `/plugins` 中找到 **DrugAlpha 创新药投研** 并安装。由你在浏览器完成 DrugAlpha 登录授权，再开启新会话查询。
+
+这是 DrugAlpha 自建的 GitHub 插件目录，尚未上架 OpenAI 官方目录。插件包安装流程仍需在你的实际客户端验证；已有手动连接时先核对，避免重复连接，不自动删除旧配置。不支持插件入口的客户端仍可用下方手动配置。
+
+支持范围仍只有公司/药物识别和已发布催化剂查询。服务内容更新由线上服务提供；插件图标、skill 或安装配置更新后需刷新插件目录/插件，具体操作以当前客户端支持的命令或界面为准。
+
+MCP Registry 元数据与维护说明见 [REGISTRY.md](REGISTRY.md)。登记不等于客户端内置市场收录。
+
+## 下载手动接入包
 
 - 公共仓库：https://github.com/max-nobug/drugalpha-mcp
 - ZIP 下载：https://github.com/max-nobug/drugalpha-mcp/raw/refs/heads/main/downloads/drugalpha-mcp-v0.1.zip

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.max-nobug/drugalpha-mcp",
+  "title": "DrugAlpha 创新药投研",
+  "description": "Company/drug identification and published biopharma catalysts. DrugAlpha OAuth account required.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/max-nobug/drugalpha-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://drugalpha.com/",
+  "remotes": [
+    { "type": "streamable-http", "url": "https://drugalpha.com/mcp" }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "drugalpha",
+  "version": "0.1.1",
+  "description": "Identify covered companies and drugs and query published DrugAlpha catalysts.",
+  "author": {
+    "name": "DrugAlpha",
+    "url": "https://drugalpha.com/",
+    "email": "zmxx00@126.com"
+  },
+  "homepage": "https://drugalpha.com/",
+  "repository": "https://github.com/max-nobug/drugalpha-mcp",
+  "keywords": [
+    "biopharma",
+    "research",
+    "catalysts"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "DrugAlpha 创新药投研",
+    "shortDescription": "用你的 AI 查询创新药催化剂",
+    "longDescription": "连接 DrugAlpha 创新药投研数据库，在你自己的 AI Agent 中识别公司和药物、查询已发布催化剂。可按公司或已确认关联药物获取事件，并保留时间精度、确定性与来源。使用 DrugAlpha 账号在浏览器登录授权，可在网站撤销连接。当前工具仅提供只读查询；分析使用 Agent 自身模型，不调用 DrugAlpha AI API。当前已开放模块不限制业务使用额度，Agent 自身模型费用按其服务规则计算。临床对比、竞争格局、估值、峰值销售、疾病知识库和股票技术分析等暂未接入。查询结果以平台覆盖和发布数据为限，不保证完整、实时或事件必然发生。",
+    "developerName": "DrugAlpha",
+    "category": "Productivity",
+    "capabilities": [
+      "公司与药物识别",
+      "已发布催化剂查询"
+    ],
+    "websiteURL": "https://drugalpha.com/",
+    "supportURL": "https://github.com/max-nobug/drugalpha-mcp/issues",
+    "defaultPrompt": [
+      "恒瑞医药未来12个月有哪些催化剂？请注明时间精度与来源。",
+      "IBI363后续有哪些催化剂？",
+      "信达生物未来3个月有哪些催化剂？"
+    ],
+    "brandColor": "#193b5b",
+    "brandColorDark": "#bbd2ee",
+    "composerIcon": "./assets/icon.png",
+    "composerIconDark": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "logoDark": "./assets/icon.png"
+  }
+}
