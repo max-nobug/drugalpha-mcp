@@ -2,6 +2,8 @@
 
 本仓库的 server.json 只登记远程服务元数据，不分发 DrugAlpha 服务端代码。
 
+2026-10-04：已使用官方 mcp-publisher 发布版本 0.1.0。
+
 - 登记名称：io.github.max-nobug/drugalpha-mcp
 - 服务地址：https://drugalpha.com/mcp
 - 功能：公司/药物识别、已发布催化剂查询
