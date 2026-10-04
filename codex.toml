@@ -1,0 +1,9 @@
+# Merge this section into your Codex config; preserve all other settings.
+[mcp_servers.drugalpha]
+url = "https://drugalpha.com/mcp"
+scopes = ["entity:read", "catalysts:read"]
+
+[mcp_servers.drugalpha.oauth]
+client_id = "drugalpha-codex"
+callback_url = "http://127.0.0.1:8900/callback"
+callback_port = 8900
