@@ -1,7 +1,7 @@
 {
   "name": "drugalpha",
-  "version": "0.1.1",
-  "description": "Identify covered companies and drugs and query published DrugAlpha catalysts.",
+  "version": "0.2.0",
+  "description": "Read-only DrugAlpha research data and authorized sector valuation/holdings Excel. Tools depend on current account consent.",
   "author": {
     "name": "DrugAlpha",
     "url": "https://drugalpha.com/",
@@ -18,20 +18,24 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "DrugAlpha 创新药投研",
-    "shortDescription": "用你的 AI 查询创新药催化剂",
-    "longDescription": "连接 DrugAlpha 创新药投研数据库，在你自己的 AI Agent 中识别公司和药物、查询已发布催化剂。可按公司或已确认关联药物获取事件，并保留时间精度、确定性与来源。使用 DrugAlpha 账号在浏览器登录授权，可在网站撤销连接。当前工具仅提供只读查询；分析使用 Agent 自身模型，不调用 DrugAlpha AI API。当前已开放模块不限制业务使用额度，Agent 自身模型费用按其服务规则计算。临床对比、竞争格局、估值、峰值销售、疾病知识库和股票技术分析等暂未接入。查询结果以平台覆盖和发布数据为限，不保证完整、实时或事件必然发生。",
+    "shortDescription": "用你的 AI 查询创新药投研数据库",
+    "longDescription": "通过DrugAlpha账号授权查询公司、药物、催化剂、估值、竞争格局、指南、临床、资产概览、晨报及研究资料，领取板块估值和持仓Excel。当前开放15查询与2Excel；独立管线、流行病学和指标解释等待原模块发布依赖同步。实际范围以授权工具列表为准。本人公司估值优先使用已保存模型；板块使用平台公共口径。分析和费用测算使用用户agent，不调用平台AI API。完整DCF任务、海外销售和业务写入未开放。GitHub自建目录不是官方市场审核通过。",
     "developerName": "DrugAlpha",
     "category": "Productivity",
     "capabilities": [
-      "公司与药物识别",
-      "已发布催化剂查询"
+      "公司与药物识别及催化剂",
+      "估值与竞争格局",
+      "指南与临床数据",
+      "资产概览、精选与晨报",
+      "说明书、药价及研究资料",
+      "板块结论与Excel"
     ],
     "websiteURL": "https://drugalpha.com/",
     "supportURL": "https://github.com/max-nobug/drugalpha-mcp/issues",
     "defaultPrompt": [
-      "恒瑞医药未来12个月有哪些催化剂？请注明时间精度与来源。",
-      "IBI363后续有哪些催化剂？",
-      "信达生物未来3个月有哪些催化剂？"
+      "恒瑞医药未来12个月有哪些催化剂？注明时间精度和来源。",
+      "查询TROP2靶点的竞争格局。",
+      "获取创新药板块估值结论和Excel。"
     ],
     "brandColor": "#193b5b",
     "brandColorDark": "#bbd2ee",

@@ -1,7 +1,7 @@
 {
   "name": "drugalpha",
-  "version": "0.1.1",
-  "description": "Identify companies and drugs and query published DrugAlpha catalysts.",
+  "version": "0.2.0",
+  "description": "Read-only DrugAlpha research data and authorized sector valuation/holdings Excel. Tools depend on current account consent.",
   "author": {
     "name": "DrugAlpha",
     "email": "zmxx00@126.com",

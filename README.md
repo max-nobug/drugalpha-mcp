@@ -1,11 +1,11 @@
-# DrugAlpha MCP 接入包 · v0.1
+# DrugAlpha MCP 接入包 · v0.2
 
 让你自己的 AI 查询 DrugAlpha 已发布投研数据。服务运行在线上，无需部署本地服务器，不消耗 DrugAlpha AI API。
 
 - 服务地址：https://drugalpha.com/mcp
 - 协议：Streamable HTTP；授权：OAuth + PKCE
 - 账号：拥有 DrugAlpha 正式内容阅读权限的账号
-- 本版本功能：公司/药物识别、按公司或已确认关联药物查询催化剂
+- 当前范围：身份与催化剂、公司估值、靶点/适应症竞争格局、指南、临床数据、资产概览、精选、已发布晨报、说明书、药价、公司点评资料、费用框架，以及板块估值/持仓结论与Excel。独立管线、流行病学和指标解释暂缓，见文末。实际以当前账号授权和工具列表为准。
 - 已验证：Codex 桌面内置 CLI 0.159.2，浏览器授权与真实查询（2026-10-04）
 - 已验证：Codex 桌面 GitHub 插件目录添加、插件安装、集成工具加载及 IBI363 催化剂真实查询（2026-10-04，用户实测截图）。
 - 已验证：WorkBuddy 5.5.6，浏览器授权、药物识别与催化剂真实查询（2026-10-04，用户实测确认）
@@ -31,14 +31,14 @@ codex plugin marketplace add max-nobug/drugalpha-mcp
 
 这是 DrugAlpha 自建的 GitHub 插件目录，尚未上架 OpenAI 官方目录。已在 Codex 桌面完成添加目录、安装、集成工具加载和真实查询验证。已有手动连接时先核对，避免重复连接，不自动删除旧配置。不支持插件入口的客户端仍可用下方手动配置。
 
-支持范围仍只有公司/药物识别和已发布催化剂查询。服务内容更新由线上服务提供；插件图标、skill 或安装配置更新后需刷新插件目录/插件，具体操作以当前客户端支持的命令或界面为准。
+功能由主站服务及当前授权控制，旧连接可能需要重新授权新增范围。服务内容更新由线上服务提供；插件图标、skill 或安装配置更新后需刷新插件目录/插件，具体操作以当前客户端支持的命令或界面为准。
 
 MCP Registry 元数据与维护说明见 [REGISTRY.md](REGISTRY.md)。登记不等于客户端内置市场收录。
 
 ## 下载手动接入包
 
 - 公共仓库：https://github.com/max-nobug/drugalpha-mcp
-- ZIP 下载：https://github.com/max-nobug/drugalpha-mcp/raw/refs/heads/main/downloads/drugalpha-mcp-v0.1.zip
+- ZIP 下载：https://github.com/max-nobug/drugalpha-mcp/raw/refs/heads/main/downloads/drugalpha-mcp-v0.2.zip
 - Git 拉取：`git clone https://github.com/max-nobug/drugalpha-mcp.git`
 
 无需克隆投研平台代码或安装服务端。下载 ZIP 后解压，或直接让 Agent 阅读仓库中的安装指引即可。
@@ -54,21 +54,6 @@ MCP Registry 元数据与维护说明见 [REGISTRY.md](REGISTRY.md)。登记不�
 请让 Agent 确认 WorkBuddy 实际生效的 MCP 配置位置，备份后只合并 drugalpha 项，保留其他连接。然后在 WorkBuddy 中发起连接，由用户自行完成浏览器登录授权。看到工具列表并真实执行公司识别、催化剂查询后，才能报告连接成功；如失败，反馈脱敏后的错误提示，不发送令牌或完整回调链接。
 
 ## Claude Code 配置（授权与连接已验证，问答待验收）
-
-### GitHub 插件安装
-
-在终端运行：
-
-```sh
-claude plugin marketplace add max-nobug/drugalpha-mcp
-claude plugin install drugalpha@drugalpha
-```
-
-也可以在 Claude Code 会话中使用 `/plugin marketplace add max-nobug/drugalpha-mcp`，再用 `/plugin install drugalpha@drugalpha` 按界面安装。重启会话后在 `/mcp` 中核对插件提供的 DrugAlpha 服务并完成浏览器授权。
-
-这是自建 GitHub 插件目录，不是 Anthropic 官方市场条目。插件包校验、安装与真实问答分别验收；既有手动连接已验证不等于插件问答也已验证。已有手动 DrugAlpha MCP 时先核对重复项，不自动删除旧配置。
-
-### 手动添加远程服务
 
 识别实际使用的 Claude Code 可执行文件，先备份用户配置、检查同名服务，保留其他设置。使用该版本 CLI 帮助确认参数后添加：
 
@@ -105,8 +90,24 @@ https://drugalpha.com/oauth/connections 可查看并撤销授权。退出网站�
 
 ## 功能边界
 
-临床数据对比、竞争格局、估值/峰值销售、疾病知识库、晨报、DCF、治疗费用及股票技术分析尚未接入本版本。
+完整DCF任务、海外药物销售、股票技术分析、平台AI生成及业务写入未开放。临床对比复用已有临床查询，由用户agent保留原研究口径分析；治疗费用提供框架与资料，由用户agent测算。
 
 本包只包含公开配置和指引，不含密钥或服务端代码。各平台市场条目尚未发布，不影响已验证客户端通过此接入包连接。
 
 如需反馈问题，请在公共仓库的 Issues 中描述客户端版本、操作步骤及脱敏后的错误提示。不要上传密码、令牌、Cookie、完整客户端配置或授权回调链接。
+
+## 新增查询与授权
+
+先查看当前会话实际工具和schema，不把旧客户端验证当成新增功能全部兼容。本人公司估值优先使用已保存模型；板块使用平台公共结果。分析、费用测算和点评由用户agent执行，不调用DrugAlpha AI API。完整DCF任务、海外销售、平台AI生成及业务写入不开放。旧连接只授权身份/催化剂时，可按客户端提示重新授权所需的管线、估值、知识或临床范围；由用户确认，不自动同意，不索取令牌。详见QUERY-GUIDE.md。
+
+## 本次实际开放范围（2026-10-07）
+
+主站当前开放15项查询和2项板块Excel。独立公司管线查询get_pipeline、流行病学get_epidemiology及指标解释get_metric_definitions暂缓：它们的正式发布清单或指针需要由原模块同步；MCP不补写发布记录。其他查询以本次授权及实际工具列表为准。已有连接只看到旧工具时，按客户端入口重新授权所需范围，再开启新会话。
+
+手动配置名为drugalpha的Codex服务，可先用codex mcp login --help确认支持--scopes，再运行：
+
+```sh
+codex mcp login drugalpha --scopes entity:read,catalysts:read,pipeline:read,valuation:read,knowledge:read,clinical:read
+```
+
+GitHub插件连接请使用插件自身的授权入口，不为此重复添加手动服务。用户在浏览器确认权限，不能自动同意或把令牌交给agent。旧版本客户端只证明之前的基础查询兼容，不证明新增模块问答已全部验收。

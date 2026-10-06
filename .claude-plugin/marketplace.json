@@ -1,12 +1,15 @@
 {
   "name": "drugalpha",
-  "owner": { "name": "DrugAlpha", "email": "zmxx00@126.com" },
-  "description": "DrugAlpha published company, drug and catalyst research tools.",
+  "owner": {
+    "name": "DrugAlpha",
+    "email": "zmxx00@126.com"
+  },
+  "description": "DrugAlpha read-only biopharma research data and Excel delivery.",
   "plugins": [
     {
       "name": "drugalpha",
       "source": "./plugins/drugalpha-claude",
-      "description": "Identify companies and drugs and query published DrugAlpha catalysts."
+      "description": "DrugAlpha read-only biopharma research data and Excel delivery."
     }
   ]
 }

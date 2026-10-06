@@ -6,7 +6,7 @@
 
 - 登记名称：io.github.max-nobug/drugalpha-mcp
 - 服务地址：https://drugalpha.com/mcp
-- 功能：公司/药物识别、已发布催化剂查询
+- 0.1.0登记简介：公司/药物识别、已发布催化剂查询。服务现已更新，实际范围以线上tools/list及仓库README为准；接入包/插件版本与Registry登记版本分开维护。
 - 访问要求：用户在 DrugAlpha 网站登录并完成 OAuth 授权
 
 Registry 是 MCP 生态的元数据登记处，不代表通过 OpenAI 官方审核，也不保证被各客户端内置市场收录。
