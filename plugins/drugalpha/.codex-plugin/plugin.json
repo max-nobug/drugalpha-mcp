@@ -19,7 +19,7 @@
   "interface": {
     "displayName": "DrugAlpha 创新药投研",
     "shortDescription": "用你的 AI 查询创新药投研数据库",
-    "longDescription": "通过DrugAlpha账号授权查询公司、药物、催化剂、公司管线、估值、竞争格局、指南、临床、资产概览、晨报及研究资料，领取板块估值和持仓Excel。当前开放16查询与2Excel；流行病学和指标解释等待原模块发布依赖同步。实际范围以授权工具列表为准。本人公司估值优先使用已保存模型；板块使用平台公共口径。分析和费用测算使用用户agent，不调用平台AI API。完整DCF任务、海外销售和业务写入未开放。GitHub自建目录不是官方市场审核通过。",
+    "longDescription": "通过DrugAlpha账号授权查询公司、药物、催化剂、公司管线、估值、竞争格局、指南、临床、资产概览、晨报及研究资料，领取板块估值和持仓Excel。当前开放18查询与2Excel；公司管线、流行病学和指标解释已开放。实际范围以授权工具列表为准。本人公司估值优先使用已保存模型；板块使用平台公共口径。分析和费用测算使用用户agent，不调用平台AI API。完整DCF任务、海外销售和业务写入未开放。GitHub自建目录不是官方市场审核通过。",
     "developerName": "DrugAlpha",
     "category": "Productivity",
     "capabilities": [
