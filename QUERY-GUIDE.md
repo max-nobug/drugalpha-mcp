@@ -4,6 +4,7 @@
 
 - 公司/药物：resolve_entities获取本次主体，在工具可用时再查get_pipeline或get_catalysts；歧义先确认。
 - 公司估值：get_company_valuation按名称或公司ID直查，不先翻公司目录。本人该公司已保存模型优先，否则平台；不混合药物或销售预测。
+- PS估值跟踪：get_ps_valuation_tracking 的 summary、trend、comparison 分别读取行业统计、历史趋势和公司横向对比；query按公司名称或股票代码筛选，market按A/H上市地筛选。沿用平台公开模型和已发布数据，不重算估值、不调用AI。金额为人民币元、PS为倍数、分位数为0至1；历史趋势使用当前预测峰值，不能当作历史当时的预测。两个原生Excel用download_ps_trend_excel、download_ps_comparison_excel，通过resources/read交付，沿用主站管理员导出权限。
 - 竞争格局：get_competitive_landscape区分target与indication，保留完整查询条件。指南用get_guidelines，临床用get_clinical_evidence；临床对比沿用原研究、人群、治疗臂、单位与时间点，不跨研究排名。
 - 资产概览/精选/晨报：get_pipeline_portfolio、get_official_stock_picks、get_morning_brief读取原公共或已发布结果，不触发生成。
 - 流行病学/指标：get_epidemiology、get_metric_definitions分别读取各自目录，再用本次页标识读主题，不混用目录。
