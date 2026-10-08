@@ -9,7 +9,7 @@
 - 资产概览/精选/晨报：get_pipeline_portfolio、get_official_stock_picks、get_morning_brief读取原公共或已发布结果，不触发生成。
 - 流行病学/指标：get_epidemiology、get_metric_definitions分别读取各自目录，再用本次页标识读主题，不混用目录。
 - 说明书/价格：get_drug_instructions、get_drug_prices先检索候选，说明书详情使用本次来源ID，保留规格、包装、单位和来源；不是已确认患者方案或患者自付价。
-- 公告/财务：get_company_research_inputs名称或公司ID直查，只取所需sections，公告按需includeAnnouncementText；核对主体、日期、正文范围和截断，预测不是实际值。
+- 公司点评/公告点评/财报点评/公司事件分析：优先用get_company_research_inputs名称或公司ID直查取得原始资料。公告或事件点评的sections包含announcement，eventSummary传入用户提供的事件主题关键词或公告标题，includeAnnouncementText=true读取正文；只拿财务一致预期不等于已读公告。用户只问最新公告、未提供主题或标题时先澄清，不把默认财报替代请求。核对主体、日期、正文范围和截断，缺失正文须说明，预测不是实际值；点评由用户agent完成，不调用平台AI。
 - 治疗费用：get_treatment_cost_framework提供框架，agent结合说明书/价格及用户确认的剂量、疗程和支付口径测算，列假设、公式和单位；资料不足不编造金额。
 - 板块：get_sector_valuation和get_sector_holdings读取当前汇总；完整文件用download_sector_valuation_excel、download_sector_holdings_excel。优先用resources/read读取返回的文件URI并保存，不必枚举资源目录；目录为空不代表没有文件。HTTP下载仅用于客户端能安全注入当前MCP授权的情形，不先尝试无授权下载，不索取或输出凭据。只有成功领取才称已交付，可读取previewUri时注明未保存本地。五分钟临时引用不作公开分享。
 
