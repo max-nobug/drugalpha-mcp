@@ -1,21 +1,9 @@
-# DrugAlpha Claude Code 插件 · 0.2.0
+# DrugAlpha · Claude Code 插件
 
-从自建 GitHub 目录安装：
+使用自己的AI查询DrugAlpha投研资料。服务地址：`https://drugalpha.com/mcp`。
 
-```sh
-claude plugin marketplace add max-nobug/drugalpha-mcp
-claude plugin install drugalpha@drugalpha
-```
+支持公司与药物识别、催化剂、管线、公司及行业估值、靶点和适应症竞争格局、指南、临床、流行病学、指标解释、资产概览、平台精选、海外晨报、药物说明书、药价、公告研究资料、费用框架、板块持仓及海外年度销售查询，以及已开放的Excel领取。具体查询内容、示例及导出权限见[仓库说明](../../README.md)和[查询指引](../../QUERY-GUIDE.md)。
 
-重启会话，在 /mcp 中核对插件提供的 DrugAlpha 服务并在浏览器登录授权。已有手动连接时先核对，避免重复连接。
+由用户在浏览器登录DrugAlpha并确认授权。普通查询更新先刷新工具列表，无需重复添加同名手动连接。实际可用功能以账号权限及当前客户端为准。
 
-支持当前主站及授权开放的研究查询与Excel，只读。Agent 自身模型承担分析费用，不调用 DrugAlpha AI API。此前手动 MCP 已验证授权与连接，插件模型问答仍待验证。不代表 Anthropic 官方目录审核通过。
-
-撤销连接：https://drugalpha.com/oauth/connections
-客服：zmxx00@126.com。不要发送密码、令牌或完整回调链接。
-
-## v0.2 查询范围
-
-接入主站只读资料、原业务结果和板块Excel。具体以当前授权工具列表为准；旧连接需按需重新授权，新增模块客户端问答不以旧催化剂验收代替。用户agent负责研究与计算，平台不调用AI API。完整DCF任务、海外销售及业务写入未开放。
-
-当前上线18查询＋2Excel，公司管线、流行病学和指标解释均已开放。详见仓库README；旧连接按需重新授权。
+研究分析和点评由用户自己的AI完成。不要提供密码、令牌、Cookie或完整授权回调链接。连接管理：https://drugalpha.com/oauth/connections。

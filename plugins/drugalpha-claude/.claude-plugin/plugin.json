@@ -1,7 +1,7 @@
 {
   "name": "drugalpha",
-  "version": "0.2.0",
-  "description": "Read-only DrugAlpha research data and authorized sector valuation/holdings Excel. Tools depend on current account consent.",
+  "version": "0.2.1",
+  "description": "Read-only DrugAlpha biopharma data: pipelines, catalysts, valuations, clinical evidence and overseas sales.",
   "author": {
     "name": "DrugAlpha",
     "email": "zmxx00@126.com",
