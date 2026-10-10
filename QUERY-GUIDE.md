@@ -4,27 +4,27 @@
 
 | 需求 | 工具 | 提问示例 |
 | --- | --- | --- |
-| 查公司、股票代码或药物别名 | `resolve_entities` | 查找恒瑞医药，以及IBI363的标准药物名称。 |
-| 后续催化剂 | `get_catalysts` | 查询恒瑞未来12个月催化剂，保留时间精度和来源。 |
-| 公司或药物管线 | `get_pipeline` | 查询恒瑞完整管线，区分记录数和独立药物数。 |
-| 公司估值和预测销售峰值 | `get_company_valuation` | 查询恒瑞估值及药物峰值，注明本人或平台口径。 |
-| 行业PS及公司横向对比 | `get_ps_valuation_tracking` | 查询A/H行业PS分位数，再比较恒瑞、百济和信达。 |
-| 靶点竞争格局 | `get_competitive_landscape` | 查询TROP2资产、公司、阶段和适应症。 |
+| 查公司、股票代码或药物别名 | `resolve_entities` | 查找恒瑞医药和IBI363。 |
+| 后续催化剂 | `get_catalysts` | 查询恒瑞医药未来12个月的催化剂。 |
+| 公司或药物管线 | `get_pipeline` | 查询恒瑞医药的完整管线。 |
+| 公司估值和预测销售峰值 | `get_company_valuation` | 查询恒瑞医药的估值和药物预测销售峰值。 |
+| 行业PS及公司横向对比 | `get_ps_valuation_tracking` | 查询A股、H股行业PS，并比较恒瑞、百济神州和信达。 |
+| 靶点竞争格局 | `get_competitive_landscape` | 查询TROP2竞争格局。 |
 | 适应症竞争格局 | `get_competitive_landscape` | 查询EGFR突变NSCLC一线竞争格局。 |
-| 指南 | `get_guidelines` | 查询EGFR突变NSCLC一线推荐方案。 |
-| 临床研究数据 | `get_clinical_evidence` | 查询胃癌一线PFS、OS及安全性，注明研究和人群差异。 |
-| 流行病学 | `get_epidemiology` | 查询NSCLC流行病学，列出地区、年份和口径。 |
-| 指标定义 | `get_metric_definitions` | 解释PFS、OS与HR。 |
-| 资产概览 | `get_pipeline_portfolio` | 展示贝达的阶段、靶点和技术路线分布。 |
-| 平台精选 | `get_official_stock_picks` | 阅读当前已发布精选及理由。 |
-| 海外晨报 | `get_morning_brief` | 阅读最新晨报的公司事件与市场异动。 |
-| 说明书 | `get_drug_instructions` | 查找卡瑞利珠单抗说明书并读取用法用量。 |
-| 药价 | `get_drug_prices` | 查询卡瑞利珠单抗不同规格和地区的价格。 |
-| 公司、公告、财报点评资料 | `get_company_research_inputs` | 获取恒瑞与创新药获批相关的近期公告正文并点评。 |
-| 治疗费用框架 | `get_treatment_cost_framework` | 列出测算需要的剂量、频次、疗程及计价信息。 |
-| 板块估值 | `get_sector_valuation` | 查询保守、中性、乐观估值空间。 |
-| 板块持仓 | `get_sector_holdings` | 查询最新季度持仓汇总。 |
-| 海外年度销售 | `get_overseas_drug_sales` | 查询阿柏西普历年销售，比较PD-1药物2024、2025年销售。 |
+| 指南 | `get_guidelines` | 查询EGFR突变NSCLC一线治疗指南。 |
+| 临床研究数据 | `get_clinical_evidence` | 查询胃癌一线临床数据，对比PFS、OS和安全性。 |
+| 流行病学 | `get_epidemiology` | 查询NSCLC流行病学数据。 |
+| 指标定义 | `get_metric_definitions` | 解释PFS、OS和HR。 |
+| 资产概览 | `get_pipeline_portfolio` | 查询贝达药业的管线资产概览。 |
+| 平台精选 | `get_official_stock_picks` | 查询平台当前的创新药公司精选。 |
+| 海外晨报 | `get_morning_brief` | 阅读最新海外生物医药晨报。 |
+| 说明书 | `get_drug_instructions` | 查询卡瑞利珠单抗说明书。 |
+| 药价 | `get_drug_prices` | 查询卡瑞利珠单抗价格。 |
+| 公司、公告、财报点评资料 | `get_company_research_inputs` | 获取恒瑞医药创新药获批相关公告并点评。 |
+| 治疗费用框架 | `get_treatment_cost_framework` | 提供治疗费用测算框架。 |
+| 板块估值 | `get_sector_valuation` | 查询创新药板块的估值空间。 |
+| 板块持仓 | `get_sector_holdings` | 查询创新药板块最新季度持仓。 |
+| 海外年度销售 | `get_overseas_drug_sales` | 查询阿柏西普历年销售，比较PD-1药物2024和2025年销售。 |
 
 ## 怎样查询更准确
 
@@ -48,10 +48,10 @@
 
 | 文件 | 工具 | 示例 |
 | --- | --- | --- |
-| 板块估值空间 | `download_sector_valuation_excel` | 领取板块估值Excel。 |
-| 板块持仓分析 | `download_sector_holdings_excel` | 领取板块持仓Excel。 |
-| 行业PS趋势 | `download_ps_trend_excel` | 领取行业PS趋势Excel（需管理员导出权限）。 |
-| 公司PS对比 | `download_ps_comparison_excel` | 领取公司PS对比Excel（需管理员导出权限）。 |
+| 板块估值空间 | `download_sector_valuation_excel` | 查询创新药板块的估值空间。 |
+| 板块持仓分析 | `download_sector_holdings_excel` | 查询创新药板块最新季度持仓。 |
+| 行业PS趋势 | `download_ps_trend_excel` | 领取行业PS趋势Excel。 |
+| 公司PS对比 | `download_ps_comparison_excel` | 领取公司PS对比Excel。 |
 
 使用工具返回的文件引用领取文件，可通过客户端支持的MCP资源读取方式取得。只有实际读取或保存成功才说已交付；仅预览不能声称文件已落地。不要向用户索取连接令牌，不把临时授权引用当成公开下载链接。海外销售MCP目前没有独立Excel下载工具。
 

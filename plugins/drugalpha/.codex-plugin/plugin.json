@@ -34,9 +34,9 @@
     "websiteURL": "https://drugalpha.com/",
     "supportURL": "https://github.com/max-nobug/drugalpha-mcp/issues",
     "defaultPrompt": [
-      "恒瑞医药未来12个月有哪些催化剂？注明时间精度和来源。",
+      "恒瑞医药未来12个月有哪些催化剂？",
       "查询TROP2靶点竞争格局。",
-      "查询阿柏西普历年销售，保留公司、商品及地区口径。",
+      "查询阿柏西普历年销售。",
       "获取创新药板块估值结论和Excel。"
     ],
     "brandColor": "#193b5b",
