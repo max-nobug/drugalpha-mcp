@@ -67,15 +67,37 @@ codex plugin marketplace add max-nobug/drugalpha-mcp
 
 本仓库是DrugAlpha维护的插件目录，不代表OpenAI官方市场收录。客户端界面和可用安装方式以实际版本为准。
 
-### WorkBuddy 或其他支持远程 HTTP MCP 的客户端
+### WorkBuddy 手动接入
 
-在客户端MCP连接入口填写 `https://drugalpha.com/mcp`，并完成浏览器授权。支持以下配置格式的客户端可使用：
+以下步骤对应 WorkBuddy 5.7.7：
+
+1. 打开左侧 **专家·技能·连接器**，切换到 **连接器**。
+2. 点击右上角 **自定义连接器**，进入 **MCP 服务管理**。
+3. 点击 **添加 MCP**，在配置编辑器中添加以下配置，然后点击 **保存**。
 
 ```json
-{"mcpServers":{"drugalpha":{"type":"http","url":"https://drugalpha.com/mcp"}}}
+{
+  "mcpServers": {
+    "drugalpha": {
+      "type": "http",
+      "url": "https://drugalpha.com/mcp",
+      "timeout": 60000,
+      "disabled": false
+    }
+  }
+}
 ```
 
-不要覆盖其他连接；无需填写平台AI API Key。
+如果已有其他 MCP 服务，只把 `drugalpha` 这一项合并到现有 `mcpServers` 中，保留其他配置。已有正常的 DrugAlpha 连接时，无需重复添加。
+
+4. 返回 MCP 列表，确认 DrugAlpha 已启用；按客户端提示点击认证或授权，在浏览器中登录 DrugAlpha 并确认授权。
+5. 回到 WorkBuddy，新建任务并提问：**查询恒瑞医药未来12个月的催化剂。** 以实际返回查询数据确认接入成功。
+
+无需填写平台 AI API Key。保存按钮为灰色时，通常表示配置尚未修改。授权后工具未出现时，先刷新连接或开启新任务；授权失败时，按客户端提示重新发起认证。
+
+### 其他支持远程 HTTP MCP 的客户端
+
+在客户端 MCP 连接入口填写 `https://drugalpha.com/mcp`，并完成浏览器授权。支持 JSON 配置的客户端可参考上面的 `mcpServers` 配置，具体字段以客户端支持情况为准。
 
 ### ChatGPT 应用连接
 
