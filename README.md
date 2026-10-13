@@ -66,7 +66,7 @@
 
 把下面这句话交给你的AI助手：
 
-> 请阅读 https://github.com/max-nobug/drugalpha-mcp 中的 README.md 和 INSTALL-AGENT.md，帮我连接 DrugAlpha MCP。保留已有客户端设置，由我在浏览器完成登录授权，完成后，查询胰腺癌一线治疗竞争格局，验证连接成功。
+> 请帮我连接 DrugAlpha创新药投研数据库MCP。先阅读 https://github.com/max-nobug/drugalpha-mcp 中的 README.md 和 INSTALL-AGENT.md。保留已有客户端设置，由我在浏览器完成登录授权，完成后，查询胰腺癌一线治疗竞争格局，验证连接成功。
 
 ### Codex 插件
 
