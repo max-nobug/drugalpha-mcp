@@ -66,7 +66,7 @@
 
 把下面这句话交给你的AI助手：
 
-> 请阅读 https://github.com/max-nobug/drugalpha-mcp 中的 README.md 和 INSTALL-AGENT.md，帮我连接 DrugAlpha MCP。保留已有客户端设置，由我在浏览器完成登录授权，最后用一次真实查询验证连接。
+> 请阅读 https://github.com/max-nobug/drugalpha-mcp 中的 README.md 和 INSTALL-AGENT.md，帮我连接 DrugAlpha MCP。保留已有客户端设置，由我在浏览器完成登录授权，完成后，查询胰腺癌一线治疗竞争格局，验证连接成功。
 
 ### Codex 插件
 
@@ -104,7 +104,7 @@ codex plugin marketplace add max-nobug/drugalpha-mcp
 如果已有其他 MCP 服务，只把 `drugalpha` 这一项合并到现有 `mcpServers` 中，保留其他配置。已有正常的 DrugAlpha 连接时，无需重复添加。
 
 4. 返回 MCP 列表，确认 DrugAlpha 已启用；按客户端提示点击认证或授权，在浏览器中登录 DrugAlpha 并确认授权。
-5. 回到 WorkBuddy，新建任务并提问：**查询恒瑞医药未来12个月的催化剂。** 以实际返回查询数据确认接入成功。
+5. 回到 WorkBuddy，新建任务并提问：**查询胰腺癌一线治疗竞争格局。** 以实际返回查询数据确认接入成功。
 
 无需填写平台 AI API Key。保存按钮为灰色时，通常表示配置尚未修改。授权后工具未出现时，先刷新连接或开启新任务；授权失败时，按客户端提示重新发起认证。
 
