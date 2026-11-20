@@ -4,12 +4,12 @@
     "name": "DrugAlpha",
     "email": "zmxx00@126.com"
   },
-  "description": "DrugAlpha read-only biopharma research data and Excel delivery.",
+  "description": "DrugAlpha Innovative Drug Database · 创新药数据库. Read-only data for your AI.",
   "plugins": [
     {
       "name": "drugalpha",
       "source": "./plugins/drugalpha-claude",
-      "description": "DrugAlpha read-only biopharma research data and Excel delivery."
+      "description": "DrugAlpha Innovative Drug Database · 创新药数据库. Read-only data for your AI."
     }
   ]
 }

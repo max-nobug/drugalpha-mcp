@@ -1,6 +1,8 @@
-# MCP Registry 登记
+# MCP Registry registration / 登记
 
-本仓库的 server.json 只登记远程服务元数据，不分发 DrugAlpha 服务端代码。
+English: `server.json` preserves the separately published Registry 0.1.0 metadata. Its historical title/summary do not describe the complete current service. This documentation/plugin update does not republish the Registry or change the endpoint. See [current scope](README.md).
+
+本仓库的 server.json 只登记远程服务元数据，不分发 DrugAlpha 服务端代码。本次双语文档/插件更新不重新发布 Registry，历史名称和简介不代表当前完整范围，见[最新中文说明](README.zh-CN.md)。
 
 2026-10-04：已使用官方 mcp-publisher 发布版本 0.1.0。
 

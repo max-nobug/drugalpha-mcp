@@ -1,11 +1,19 @@
 {
   "name": "drugalpha",
-  "interface": { "displayName": "DrugAlpha 插件" },
+  "interface": {
+    "displayName": "DrugAlpha 创新药数据库 · Innovative Drug Database"
+  },
   "plugins": [
     {
       "name": "drugalpha",
-      "source": { "source": "local", "path": "./plugins/drugalpha" },
-      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "source": {
+        "source": "local",
+        "path": "./plugins/drugalpha"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
       "category": "Productivity"
     }
   ]

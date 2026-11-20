@@ -1,7 +1,7 @@
 {
   "name": "drugalpha",
-  "version": "0.2.1",
-  "description": "Read-only DrugAlpha biopharma data: pipelines, catalysts, valuations, clinical evidence and overseas sales.",
+  "version": "0.2.2",
+  "description": "DrugAlpha Innovative Drug Database: read-only pipelines, clinical evidence, landscapes, sales, valuations, China/US costs and patents. 创新药数据库。",
   "author": {
     "name": "DrugAlpha",
     "url": "https://drugalpha.com/",
@@ -17,27 +17,26 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "DrugAlpha 创新药投研",
-    "shortDescription": "用你的 AI 查询创新药投研数据库",
-    "longDescription": "通过DrugAlpha账号查询公司、药物、催化剂、管线、公司估值、行业PS、竞争格局、指南、临床、流行病学、指标解释、资产概览、精选、晨报、说明书、药价、公告研究资料、治疗费用框架、板块估值与持仓及海外销售，领取已开放Excel。公司估值优先使用本人已保存模型；分析由你的AI完成。实际功能以账号权限和当前工具列表为准。",
+    "displayName": "DrugAlpha 创新药数据库",
+    "shortDescription": "创新药数据查询 · Biopharma data for your AI",
+    "longDescription": "查询全球创新药管线、临床、竞争格局、销售、催化剂、估值、中国/美国费用及专利、技术分析等；支持研发、BD 和投研。Read-only biopharma data for R&D, BD and investment research; analysis by your AI. Availability depends on account permissions and published coverage.",
     "developerName": "DrugAlpha",
     "category": "Productivity",
     "capabilities": [
-      "公司、药物、催化剂及管线",
-      "公司估值、行业PS及横向对比",
-      "竞争格局、指南、临床及疾病资料",
-      "海外药物年度销售",
-      "资产概览、精选、晨报及研究资料",
-      "说明书、药价及费用框架",
-      "板块估值、持仓及Excel"
+      "管线与催化剂 · Pipelines and catalysts",
+      "临床与竞争格局 · Clinical evidence and landscapes",
+      "销售与估值 · Sales and valuations",
+      "中国/美国费用与专利 · China/US costs and patents",
+      "技术分析及研究资料 · Technical analysis and research inputs",
+      "已开放 Excel · Available Excel exports"
     ],
     "websiteURL": "https://drugalpha.com/",
     "supportURL": "https://github.com/max-nobug/drugalpha-mcp/issues",
     "defaultPrompt": [
-      "恒瑞医药未来12个月有哪些催化剂？",
-      "查询TROP2靶点竞争格局。",
-      "查询阿柏西普历年销售。",
-      "获取创新药板块估值结论和Excel。"
+      "查询 IBI363 的管线进展和适应症布局。",
+      "Find clinical evidence for SKB264 by indication.",
+      "查询阿柏西普在美国的专利到期信息。",
+      "Find Keytruda US treatment costs after confirming dosing and duration."
     ],
     "brandColor": "#193b5b",
     "brandColorDark": "#bbd2ee",

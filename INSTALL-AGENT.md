@@ -1,27 +1,18 @@
-# 给安装AI助手的指引
+# Agent installation guide
 
-连接目标：`https://drugalpha.com/mcp`。不安装或运行DrugAlpha服务端。
+English · [简体中文](INSTALL-AGENT.zh-CN.md)
 
-1. 确认用户实际使用的客户端和连接入口。已有正常DrugAlpha连接时直接验证，不重复添加同名配置。
-2. Codex插件使用本仓库插件目录和插件自身的身份验证入口。WorkBuddy 5.7.7 按 [README 手动接入步骤](README.md#workbuddy-手动接入)，从“专家·技能·连接器 → 连接器 → 自定义连接器 → 添加 MCP”进入；其他支持远程HTTP MCP的客户端使用README中的服务地址或配置。ChatGPT通过账号可用的应用连接入口配置；Claude Code先检查当前版本的MCP帮助及授权入口。
-3. 如需修改手动配置，备份并只合并DrugAlpha相关项，保留其他服务、模型和用户设置。Codex手动接入包提供codex.toml，使用前核对当前客户端支持的参数和回调要求，不擅自修改固定配置值。
-4. 用户在DrugAlpha浏览器页面自行登录和确认授权。不要索取密码、Cookie、令牌或完整回调地址，不代替用户点击同意。
-5. 授权结束后，核对客户端连接和可用工具。浏览器成功不等于实际查询成功；使用用户指定对象做一次只读查询，默认查询胰腺癌一线治疗竞争格局。
-6. 分别报告连接和查询结果。失败只反馈脱敏错误，不声称安装成功。具体工具及示例见QUERY-GUIDE.md。
+Connect to `https://drugalpha.com/mcp`; do not install or run the DrugAlpha server. See [README](README.md) and [query guide](QUERY-GUIDE.md).
 
-Codex、WorkBuddy和ChatGPT应用连接已有实际查询验证；不据此保证所有客户端版本兼容。Claude Code已验证授权与连接，模型驱动问答仍需按用户实际环境核对。
+For a first-time user without an account, first point them to the [DrugAlpha Innovative Drug Database](https://drugalpha.com/) to register. Existing account holders can sign in; already connected users can query directly. Do not send users through registration or reauthorization on every query.
 
-普通数据和工具更新、账号权限调整通常不需要重新授权。工具未出现时先刷新工具列表或开启新会话；只有授权确实失效或被撤销时，按客户端提示重新连接。不要为获取普通新功能关闭已有正常连接。
+1. Identify the user's actual client and supported connection method. Reuse an existing working DrugAlpha connection; do not add duplicates.
+2. Use the client's supported remote HTTP MCP/plugin entry. WorkBuddy's previously verified 5.7.7 route is Experts/Skills/Connectors → Connectors → Custom connectors → Add MCP. ChatGPT uses its available app/custom-connection entry; Codex and Claude Code use their installed version's plugin/MCP and authentication support.
+3. If editing configuration, back it up and merge only the DrugAlpha entry. Preserve other services, models and settings. Check supported fields before using `codex.toml`; do not silently change callback settings.
+4. For OAuth, let the user sign in and consent on the DrugAlpha browser page. Do not request passwords, cookies, tokens or complete callback URLs, or consent on their behalf.
+5. For a personal key, direct the user to [key management](https://drugalpha.com/oauth/keys) to create and paste it directly into trusted credential settings. A dedicated Key field takes the bare key; a manually configured `Authorization` header takes `Bearer <YOUR_PERSONAL_KEY>`. Never put real keys in chats, command history, shared files, screenshots or packages. Keys are available now and follow the account subscription; independent revocation does not affect OAuth.
+6. Refresh tools and perform one read-only query on the user's chosen subject (default: first-line pancreatic cancer competitive landscape). Report connection status and actual query status separately. Browser authorization alone does not prove data access. Describe failures with redacted errors; do not report success without a successful query.
 
-连接管理：https://drugalpha.com/oauth/connections。问题反馈时保留客户端名称、版本、步骤及脱敏错误；不提交凭据或完整配置。
+Preserve a working OAuth connection when adding key support. Ordinary tool/data/permission updates usually require only a refresh or new conversation, not reauthorization. Availability varies by client version and account; do not claim compatibility from HTTP support alone.
 
-## 仅支持 headers 的客户端：个人 Key（待开放）
-
-个人 Key 尚未上线。不要把本文档更新视为服务已开放，也不要对不支持 OAuth 的客户端声称已连接；告知用户当前限制。开放后的用户操作见 [个人 Key 接入说明](README.md#个人-key-接入待开放)。
-
-- 已有正常 OAuth 连接时保持原连接，不为使用 Key 撤销、替换或重复配置。Key 和 OAuth 使用同一服务地址，数据权限均由用户账号决定。
-- 功能开放后，引导用户自己在 DrugAlpha 网站登录并创建 Key，再直接填写到客户端的凭据设置中；不要让用户把 Key、密码或 Cookie 发到 AI 对话，不读取或展示既有凭据。
-- 配置目标为 `https://drugalpha.com/mcp`，请求头为 `Authorization: Bearer <用户自己的个人Key>`。只说明填写位置，不把真实 Key 写入示例、共享配置、截图、命令历史或安装包。
-- Key 有效期跟随订阅，订阅到期或账号停用时无法查询；续订后未撤销的 Key 可继续使用，主动撤销后需重新创建。Key 单独撤销不会影响现有 OAuth 连接。
-- 访问记录沿用 MCP 记录，按账号统一统计，标注 Key 名称与脱敏尾号。权限失败如实说明，不以其他来源冒充 DrugAlpha 结果。
-- 实际查询验证成功后才报告接入完成。不能仅凭支持 HTTP 或 headers 就宣称 Alpha 派或其他客户端已经适配。
+Answer in the user's language unless requested otherwise. Discover current tool schemas and use identifiers from current results. Do not expose credentials or internal identifiers in final answers. Manage OAuth connections at [My connections](https://drugalpha.com/oauth/connections).

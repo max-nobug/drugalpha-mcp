@@ -1,7 +1,7 @@
 {
   "name": "drugalpha",
-  "version": "0.2.1",
-  "description": "Read-only DrugAlpha biopharma data: pipelines, catalysts, valuations, clinical evidence and overseas sales.",
+  "version": "0.2.2",
+  "description": "DrugAlpha Innovative Drug Database: read-only pipelines, clinical evidence, landscapes, sales, valuations, China/US costs and patents. 创新药数据库。",
   "author": {
     "name": "DrugAlpha",
     "email": "zmxx00@126.com",

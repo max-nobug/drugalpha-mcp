@@ -1,92 +1,55 @@
-# DrugAlpha MCP
+# DrugAlpha MCP — Innovative Drug Database
 
-让你的 AI 助手查询 DrugAlpha 的公司管线、催化剂、估值、竞争格局、临床资料和海外药物销售数据，并结合查询结果进行分析。
+English · [简体中文](README.zh-CN.md)
 
-**服务地址：`https://drugalpha.com/mcp`** · 只读访问 · 使用 DrugAlpha 账号授权
+Connect your AI to the **DrugAlpha Innovative Drug Database** for global drug pipelines, clinical evidence, competitive landscapes, overseas sales, company and drug catalysts, epidemiology, guidelines, valuations, overseas morning briefs, treatment costs, patent expiry and listed-company assets. Supports drug R&D, business development and investment research.
 
-支持的客户端入口包括 Codex、WorkBuddy 和 ChatGPT 应用连接。Claude Code 已完成授权和连接验证；具体功能是否可用，以当前客户端工具列表和账号权限为准。使用自己的 AI 助手完成分析，模型用量由对应客户端承担。
+**Endpoint: `https://drugalpha.com/mcp` · Read-only access · Analysis by your AI**
 
-## 目前可以查询什么
+**First-time users:** register an account at the [DrugAlpha Innovative Drug Database](https://drugalpha.com/), then connect with browser authorization or a personal key. Already connected? Start querying directly.
 
-说明更新于 **2026-10-16**。下列为当前服务支持的查询能力；账号权限、平台覆盖范围和来源完整性可能影响结果。示例是提问方式，不保证每个对象、年度或条件都有数据。
+[Connection guide](https://drugalpha.com/connect-ai) · [Manage OAuth connections](https://drugalpha.com/oauth/connections) · [Manage personal keys](https://drugalpha.com/oauth/keys)
 
-| 查询内容 | 可以获得的数据 | 可以直接这样问 |
-| --- | --- | --- |
-| 公司与药物识别 | 已覆盖公司的名称、股票代码，以及药物标准名称、研发代号和别名 | 查找恒瑞医药和IBI363。 |
-| 催化剂雷达 | 公司或药物的后续事件、预计时间、时间精度及来源 | 查询恒瑞医药未来12个月的催化剂。 |
-| 公司及药物管线 | 药物、靶点、适应症、研发阶段、试验登记号及已提供的进展记录 | 查询恒瑞医药的完整管线。 |
-| 公司估值 | 公司估值结果、估值参数、药物预测销售峰值；该公司保存过“我的估值”时优先使用本人数据 | 查询恒瑞医药的估值和核心药物预测销售峰值。 |
-| 行业 PS 估值跟踪 | A/H股行业PS水平、历史趋势、最高/最低/中位数及分位数、公司横向对比 | 查询创新药行业A股、H股PS水平，并比较恒瑞、百济神州和信达。 |
-| 靶点竞争格局 | 对应靶点的已覆盖竞争资产、公司、适应症和研发阶段 | 查询TROP2竞争格局。 |
-| 适应症竞争格局 | 满足疾病及人群、标志物、治疗线数等条件的竞争资产 | 查询EGFR突变NSCLC一线竞争格局。 |
-| 诊疗指南 | 已收录的指南、适用人群、推荐方案及来源信息 | 查询NSCLC一线治疗指南。 |
-| 临床数据 | 已收录研究的方案、人群、治疗臂、疗效和安全性指标及来源 | 查询胃癌一线临床数据，对比PFS、OS和安全性。 |
-| 疾病流行病学 | 已收录的疾病流行病学资料及其地区、年份、统计口径 | 查询NSCLC流行病学数据。 |
-| 临床指标解释 | 已收录指标的定义和解读资料 | 解释PFS、OS和HR。 |
-| 管线资产概览 | 公司资产概览及平台提供的阶段、靶点和技术路线分布 | 查询贝达药业的管线资产概览。 |
-| 平台精选 | 平台已发布的公司精选内容和理由 | 查询平台当前的创新药公司精选。 |
-| 海外生物医药晨报 | 最新或指定日期的已发布晨报，包括公司事件和市场异动 | 阅读最新海外生物医药晨报。 |
-| 药物说明书 | 可查询来源中的适应症、用法用量、规格及注意事项等原文栏目 | 查询卡瑞利珠单抗说明书。 |
-| 药品价格 | 药品候选、厂家、规格、包装或单位价格、地区和来源 | 查询卡瑞利珠单抗价格。 |
-| 公司点评研究资料 | 公司公告信息及可取得的正文、财务一致预期等资料，供你的AI分析 | 获取恒瑞医药创新药获批相关公告并点评。 |
-| 治疗费用框架 | 治疗费用测算的公式概览、所需资料和单位说明 | 提供治疗费用测算框架。 |
-| 板块估值空间 | 当前板块估值结论、不同情景及数据日期 | 查询创新药板块的估值空间。 |
-| 板块持仓分析 | 最新季度的板块持仓汇总指标及统计口径 | 查询创新药板块最新季度持仓。 |
-| 海外药物销售 | 已收录的年度销售数据；按公司、药物、商品名、靶点、地区、年份查询或进行多药对比 | 查询阿柏西普历年销售，比较PD-1药物2024和2025年销售。 |
+## Available data
 
-靶点与适应症竞争格局共用一个查询工具。临床对比通过查询研究资料后由你的AI完成，不是另外一套数据库。
+Updated **2026-11-20**. Availability depends on your account, the current tool list and published data coverage. Examples describe queries, not guaranteed coverage of every drug or market.
 
-## 海外药物销售数据
+| Area | What you can query |
+| --- | --- |
+| Companies and drugs | Covered company names and tickers; standardized drug names, development codes and aliases |
+| Pipelines and catalysts | Company/drug pipelines, targets, indications, stages, trial registrations, upcoming events and sources |
+| Competitive landscapes | Normalized targets or indications, retaining modality, population, biomarkers and treatment-line filters |
+| Clinical evidence | Covered trials by indication **or drug**, including treatment arms, efficacy, safety and sources |
+| Guidelines and epidemiology | Recommendations, eligible populations, geography, years and statistical definitions; clinical metric explanations |
+| Overseas sales | Published annual sales by drug, brand, company, target, geography and fiscal year; historical and multi-drug comparisons |
+| Valuation and assets | Company valuations and forecast drug peak sales, A/H industry PS, sector valuations/holdings, pipeline portfolios and platform selections |
+| Research and morning briefs | Available announcements and report inputs; both published sections of overseas biopharma morning briefs |
+| China treatment costs | Chinese prescribing information, drug prices and a cost-estimation framework with explicit assumptions |
+| US treatment costs | DailyMed labels/packages, published annual WAC quotes and server-side cost calculation after regimen and duration confirmation |
+| China patent expiry | Covered Chinese patent registrations and expiry information, with source and collection date |
+| US patent expiry | FDA Orange/Purple Book records and covered company disclosures; product-specific patent and exclusivity information |
+| Stock technical analysis | Available dated analysis and daily selection, watch and alert lists, preserving confirmation states and risk notes |
 
-已接入主站海外销售模块，可查已收录药物的年度销售金额和历史趋势，按公司、中文或英文药名、商品名、靶点、地区及年份筛选，也可进行多药销售对比。
+[Bilingual query guide and examples](QUERY-GUIDE.md). Company valuation uses your saved model first, then platform valuation. A patent's expiry is not the end of all protection for a drug. Technical analysis does not promise future returns.
 
-可以直接这样问：
+## Connect your AI
 
-- 查询阿柏西普历年销售数据。
-- 查询默沙东 Keytruda 的年度销售趋势。
-- 比较PD-1药物2024年和2025年的销售额。
-- 查询阿柏西普在美国市场的年度销售数据。
+### Ask your AI to configure the connection
 
-查询结果沿用主站已发布数据，保留原币种、单位、财年和来源说明。各药物的可查年份与地区以已收录资料为准；财报合列金额不拆成单药销售。这里提供销售查询，海外销售 Excel 暂未开放 MCP 领取。
+> Connect me to DrugAlpha MCP. Read this repository's README.md and INSTALL-AGENT.md, preserve my existing client settings, and let me complete authorization in my browser. Then query the first-line pancreatic cancer competitive landscape to verify the connection.
 
-## 可以领取的 Excel
+[Agent installation guide](INSTALL-AGENT.md) · [Download the bilingual connection ZIP](https://github.com/max-nobug/drugalpha-mcp/raw/refs/heads/main/downloads/drugalpha-mcp-v0.2.zip)
 
-| 文件 | 提问示例 | 权限说明 |
-| --- | --- | --- |
-| 板块估值空间 Excel | 查询当前板块估值结论，并领取完整估值Excel。 | 以账号可用工具为准 |
-| 板块持仓分析 Excel | 查询最新季度持仓汇总，并领取持仓Excel。 | 以账号可用工具为准 |
-| 行业 PS 历史趋势 Excel | 领取创新药行业PS历史趋势Excel。 | 沿用平台管理员导出权限 |
-| 公司 PS 横向对比 Excel | 领取公司PS横向对比Excel。 | 沿用平台管理员导出权限 |
+### OAuth: WorkBuddy, ChatGPT, Codex and Claude Code
 
-文件需通过当前连接领取。临时下载引用不是公开分享链接；只有实际取得文件后，AI才能声称已交付。海外销售目前支持MCP查询，其网页Excel下载不等于已提供MCP下载工具。
+Use a client that supports remote HTTP MCP and DrugAlpha browser authorization. Client entry points depend on version, account and plan; adding this repository does not imply inclusion in any official client marketplace.
 
-## 连接方法
+- **WorkBuddy:** open the connector settings and add a custom MCP connector. In the previously verified 5.7.7 layout: Experts/Skills/Connectors → Connectors → Custom connectors → Add MCP. Merge only the DrugAlpha entry into existing settings, enable it and complete browser authorization.
+- **ChatGPT:** use the app/custom-connection entry available to your account, enter the remote endpoint, authorize in the browser and select DrugAlpha in the conversation. Availability depends on your client and plan.
+- **Codex:** in a client supporting plugin marketplaces, add this repository with `codex plugin marketplace add max-nobug/drugalpha-mcp`, then install DrugAlpha and authorize. The optional `codex.toml` is a manual configuration reference; check your client's supported fields before merging it.
+- **Claude Code:** use its supported plugin/MCP installation and authentication flow. The Claude plugin is in `plugins/drugalpha-claude`; check the installed client's help for its current commands.
 
-### 让 AI 帮你配置
-
-把下面这句话交给你的AI助手：
-
-> 请帮我连接 DrugAlpha创新药投研数据库MCP。先阅读 https://github.com/max-nobug/drugalpha-mcp 中的 README.md 和 INSTALL-AGENT.md。保留已有客户端设置，由我在浏览器完成登录授权，完成后，查询胰腺癌一线治疗竞争格局，验证连接成功。
-
-### Codex 插件
-
-在支持插件目录的Codex中添加本仓库：
-
-```sh
-codex plugin marketplace add max-nobug/drugalpha-mcp
-```
-
-在插件界面找到 **DrugAlpha 创新药投研** 并安装，通过该插件的身份验证入口完成浏览器授权。已有插件连接时，不必再添加同名手动MCP配置。
-
-本仓库是DrugAlpha维护的插件目录，不代表OpenAI官方市场收录。客户端界面和可用安装方式以实际版本为准。
-
-### WorkBuddy 手动接入
-
-以下步骤对应 WorkBuddy 5.7.7：
-
-1. 打开左侧 **专家·技能·连接器**，切换到 **连接器**。
-2. 点击右上角 **自定义连接器**，进入 **MCP 服务管理**。
-3. 点击 **添加 MCP**，在配置编辑器中添加以下配置，然后点击 **保存**。
+For clients using JSON MCP configuration, adapt this to their supported schema:
 
 ```json
 {
@@ -101,71 +64,40 @@ codex plugin marketplace add max-nobug/drugalpha-mcp
 }
 ```
 
-如果已有其他 MCP 服务，只把 `drugalpha` 这一项合并到现有 `mcpServers` 中，保留其他配置。已有正常的 DrugAlpha 连接时，无需重复添加。
+Preserve other services and existing working connections. Refresh the tool list or start a new conversation after ordinary updates; reauthorize only when required. Browser authorization and a successful data query are separate checks.
 
-4. 返回 MCP 列表，确认 DrugAlpha 已启用；按客户端提示点击认证或授权，在浏览器中登录 DrugAlpha 并确认授权。
-5. 回到 WorkBuddy，新建任务并提问：**查询胰腺癌一线治疗竞争格局。** 以实际返回查询数据确认接入成功。
+### Personal key: Alpha 派, AlphaEngine and other key-based clients
 
-无需填写平台 AI API Key。保存按钮为灰色时，通常表示配置尚未修改。授权后工具未出现时，先刷新连接或开启新任务；授权失败时，按客户端提示重新发起认证。
+Personal keys are available at [Manage personal keys](https://drugalpha.com/oauth/keys). Sign in to your own account, name a key (for example, “Alpha 派” or “AlphaEngine”), create it and copy it directly into your trusted client's credential field. The full key is shown only when created.
 
-### 其他支持远程 HTTP MCP 的客户端
+| Field | Value |
+| --- | --- |
+| MCP endpoint | `https://drugalpha.com/mcp` |
+| Dedicated Key field | Paste the **key only**, without `Bearer` |
+| Manually configured header | Header name `Authorization`; value `Bearer <YOUR_PERSONAL_KEY>` |
 
-在客户端 MCP 连接入口填写 `https://drugalpha.com/mcp`，并完成浏览器授权。支持 JSON 配置的客户端可参考上面的 `mcpServers` 配置，具体字段以客户端支持情况为准。
+Do not add `Bearer` to a dedicated Key field: the client may add that prefix itself. See the [website's illustrated guide](https://drugalpha.com/connect-ai) for Alpha 派 and AlphaEngine. After connecting the skill, add/select it in the conversation as required by the client.
 
-### ChatGPT 应用连接
+Key validity follows your subscription. Unrevoked keys remain usable after renewal; revoked keys do not recover. Keys and OAuth connections coexist, use the account's data permissions and can be revoked independently. Activity is recorded under the account. Never paste real keys, tokens, passwords or cookies into chats, Issues, examples or public files.
 
-通过你可用的应用连接入口添加DrugAlpha远程服务，完成DrugAlpha浏览器授权后，在对话中选择DrugAlpha再提问。此入口是否可添加自定义连接，取决于当前账号和客户端支持情况。
+## Treatment costs and patent dates: choose the market
 
-### 个人 Key 接入（待开放）
+- **China:** retrieve Chinese labels and prices, then use the cost framework with confirmed dose, frequency, duration and price basis. This is distinct from the US server-side calculator.
+- **US:** select the specific product and packaging, review label regimens, then confirm indication, dose, schedule and duration (and weight/BSA when needed). Calculation requires verified package pricing from the published annual Texas WAC snapshot. Missing or unverified price bases remain explicit gaps; the AI must not invent prices. Annual WAC is not a real-time transaction price or patient out-of-pocket cost.
+- **Patents:** state China or US explicitly. Retain product, patent/exclusivity type, source and date. No matching record does not mean no patent protection exists.
 
-**个人 Key 功能尚未上线，以下为开放后的操作说明。** 现有 WorkBuddy、Codex 和 Claude Code 连接继续使用原浏览器授权，无需更换配置。
+## Excel delivery
 
-如果客户端仅支持填写服务地址和自定义请求头，可在功能开放后按以下步骤接入：
+Sector valuation and sector holdings workbooks are available through the corresponding download tools when authorized. Industry PS trend/comparison exports retain platform export permissions, including administrator requirements where applicable. Use the current tool list to check access. Overseas sales has no separate MCP Excel-download tool.
 
-1. 在浏览器登录自己的 DrugAlpha 账号，从 [连接我的 AI](https://drugalpha.com/connect-ai) 进入“创建与管理个人 Key”。
-2. 为客户端创建一个命名 Key，例如“Alpha 派”。完整 Key 仅在创建时显示，请直接复制到自己信任的客户端设置中。
-3. 在客户端的自定义 MCP 连接中填写：
+A temporary authorized file reference is not a public sharing link. Claim delivery only after actually retrieving or saving the file.
 
-   | 配置项 | 填写内容 |
-   | --- | --- |
-   | 服务地址 | `https://drugalpha.com/mcp` |
-   | 请求头名称 | `Authorization` |
-   | 请求头内容 | `Bearer 您的个人Key`（Bearer 后有一个英文空格） |
+## Evidence, language and use
 
-4. 保存并启用，新建会话，查询“胰腺癌一线治疗竞争格局”，确认实际返回 DrugAlpha 查询结果。
+Ask in Chinese or English; replies default to the language of your question unless you request another language. Name matching depends on covered names and aliases; clarify ambiguous results instead of silently changing the company, drug or population.
 
-Key 的有效期跟随账号订阅：订阅到期或账号停用后无法查询，续订后未撤销的 Key 可继续使用；已撤销的 Key 不会恢复。没有到期日的订阅沿用账号资格。
+Retain sources, dates, units, currencies, fiscal periods, populations and coverage gaps. Missing values are not zero; forecasts are not actuals; pipeline rows are not necessarily distinct drugs. Do not split combined sales disclosures or double-count overlapping geographies. Read announcement text before claiming to have reviewed it. Complete DCF generation, platform AI generation and business-data writes are outside this connector's current scope.
 
-个人 Key 与 OAuth 可以同时使用，分别撤销互不影响；数据权限仍以当前账号为准。Key 查询沿用 MCP 访问记录，按账号统一统计，并标注 Key 名称与脱敏尾号。开放后可在 [个人 Key 管理](https://drugalpha.com/oauth/keys) 查看状态或撤销。
+Use the service under DrugAlpha's terms for legitimate research. Bulk database copying, mirroring and resale are prohibited. Actual external fetches may be throttled to protect upstream sites; local/cache reads are distinct from external requests. Account/subscription permissions and quotas still apply.
 
-不要把 Key 发到 AI 对话、群聊、Issues 或公开仓库；不要从浏览器或其他客户端提取 OAuth token 代替个人 Key。忘记 Key 时撤销后重新创建。此方式不代表 Alpha 派等客户端已经完成兼容验证，实际接入以客户端能力和查询结果为准。
-
-### 手动接入包
-
-下载 [接入ZIP](https://github.com/max-nobug/drugalpha-mcp/raw/refs/heads/main/downloads/drugalpha-mcp-v0.2.zip)，或让AI阅读 [安装指引](INSTALL-AGENT.md)。无需安装DrugAlpha服务端。
-
-## 已连接后如何使用
-
-直接用自然语言提问，必要时在客户端选择DrugAlpha。AI应使用当前工具查询数据，并注明日期、单位、来源和缺口。已配置、浏览器授权成功、实际查询成功是不同状态，应以真实查询成功确认连接可用。
-
-普通数据与查询功能更新通常不需要重新授权。新增工具未出现时，先刷新工具列表或开启新会话。账号模块权限调整也不要求重新授权；授权被撤销或凭据失效时，按客户端提示处理。
-
-在 [我的连接](https://drugalpha.com/oauth/connections) 中查看或撤销连接。退出网站不会自动断开AI连接。
-
-## 使用时保留哪些口径
-
-- 平台仅返回已覆盖、已发布或已开放的资料；空结果不代表市场上不存在相关资产或事件。
-- 管线记录不等于独立药物；预计催化剂不是确定安排。
-- 公司估值优先使用本人已保存的该公司估值，否则使用平台估值；板块及行业PS使用平台公开口径。
-- 行业历史PS使用当前预测销售峰值，不能理解为历史当时的预测口径。
-- 海外销售保留财年、币种、单位及地区定义；品牌合计和财报合列不能分摊到单药，不同地区或收入范围不能重复相加。
-- 公告点评、临床比较和费用测算由你的AI结合资料完成。说明书、价格和费用框架不等于已确认的个人治疗方案。
-- 完整DCF生成、平台AI自动生成和业务数据写入不属于当前MCP开放范围。
-
-更详细的工具对应关系和提问示例见 [查询指引](QUERY-GUIDE.md)。
-
-## 数据使用与反馈
-
-本接口用于正常投研查询。禁止短时间大批量遍历、整库复制、镜像或转售数据。异常批量访问可能触发限流或暂停访问。请遵守 DrugAlpha 服务协议；违规行为可能依法承担责任。
-
-通过仓库Issues反馈客户端名称、操作步骤及脱敏后的错误提示。不要提交密码、令牌、Cookie、完整客户端配置或授权回调链接。本仓库仅提供公开接入说明和客户端配置。
+Report client/version, reproduction steps and redacted errors in [Issues](https://github.com/max-nobug/drugalpha-mcp/issues). This repository distributes public connection materials and client plugins, not the DrugAlpha server. Registry metadata is versioned separately; see [Registry notes](REGISTRY.md).

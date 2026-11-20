@@ -1,9 +1,9 @@
-# DrugAlpha · Codex 插件
+# DrugAlpha · Codex plugin
 
-使用自己的AI查询DrugAlpha投研资料。服务地址：`https://drugalpha.com/mcp`。
+English · [简体中文](README.zh-CN.md)
 
-支持公司与药物识别、催化剂、管线、公司及行业估值、靶点和适应症竞争格局、指南、临床、流行病学、指标解释、资产概览、平台精选、海外晨报、药物说明书、药价、公告研究资料、费用框架、板块持仓及海外年度销售查询，以及已开放的Excel领取。具体查询内容、示例及导出权限见[仓库说明](../../README.md)和[查询指引](../../QUERY-GUIDE.md)。
+Read-only access to the **DrugAlpha Innovative Drug Database** through `https://drugalpha.com/mcp`. Query pipelines, catalysts, clinical evidence, landscapes, sales, valuations, China/US costs and patents, technical analysis and available Excel files. Analysis is performed by your own AI.
 
-由用户在浏览器登录DrugAlpha并确认授权。普通查询更新先刷新工具列表，无需重复添加同名手动连接。实际可用功能以账号权限及当前客户端为准。
+See the [repository guide](../../README.md), [installation guide](../../INSTALL-AGENT.md) and [query examples](../../QUERY-GUIDE.md). Availability depends on account permissions and published coverage.
 
-研究分析和点评由用户自己的AI完成。不要提供密码、令牌、Cookie或完整授权回调链接。连接管理：https://drugalpha.com/oauth/connections。
+Use the supported browser authorization flow or personal-key credential settings. A dedicated Key field takes only the key; a complete Authorization header takes `Bearer <YOUR_PERSONAL_KEY>`. Never share credentials. Refresh tools for ordinary updates; preserve working OAuth connections. Replies default to the question's language.
