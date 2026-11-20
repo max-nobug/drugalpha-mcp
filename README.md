@@ -14,21 +14,42 @@ Connect your AI to the **DrugAlpha Innovative Drug Database** for global drug pi
 
 Updated **2026-11-20**. Availability depends on your account, the current tool list and published data coverage. Examples describe queries, not guaranteed coverage of every drug or market.
 
-| Area | What you can query |
-| --- | --- |
-| Companies and drugs | Covered company names and tickers; standardized drug names, development codes and aliases |
-| Pipelines and catalysts | Company/drug pipelines, targets, indications, stages, trial registrations, upcoming events and sources |
-| Competitive landscapes | Normalized targets or indications, retaining modality, population, biomarkers and treatment-line filters |
-| Clinical evidence | Covered trials by indication **or drug**, including treatment arms, efficacy, safety and sources |
-| Guidelines and epidemiology | Recommendations, eligible populations, geography, years and statistical definitions; clinical metric explanations |
-| Overseas sales | Published annual sales by drug, brand, company, target, geography and fiscal year; historical and multi-drug comparisons |
-| Valuation and assets | Company valuations and forecast drug peak sales, A/H industry PS, sector valuations/holdings, pipeline portfolios and platform selections |
-| Research and morning briefs | Available announcements and report inputs; both published sections of overseas biopharma morning briefs |
-| China treatment costs | Chinese prescribing information, drug prices and a cost-estimation framework with explicit assumptions |
-| US treatment costs | DailyMed labels/packages, published annual WAC quotes and server-side cost calculation after regimen and duration confirmation |
-| China patent expiry | Covered Chinese patent registrations and expiry information, with source and collection date |
-| US patent expiry | FDA Orange/Purple Book records and covered company disclosures; product-specific patent and exclusivity information |
-| Stock technical analysis | Available dated analysis and daily selection, watch and alert lists, preserving confirmation states and risk notes |
+| Query | What you can obtain | Example question |
+| --- | --- | --- |
+| Company identification | Find covered Chinese/English company names and tickers; identify the specific listed entity. | Find Hengrui Pharmaceuticals and its ticker. |
+| Drug identification and aliases | Resolve standardized drug names, development codes and covered aliases to the same drug. | Resolve SKB264 and show its covered aliases. |
+| Company pipelines | Retrieve covered drugs, targets, indications, development stages, trial registrations and progress records for a company. | List Keymed Biosciences’ complete covered pipeline by drug, target and stage. |
+| Drug development progress | Look up a drug’s covered indications, stage in each indication and development progress. | Show IBI363 development progress and indication coverage. |
+| Company catalysts | Find covered upcoming events for a company and time range, with expected dates, date precision and sources. | Find Hengrui’s catalysts over the next 12 months. |
+| Drug catalysts | Find a drug’s covered upcoming clinical, regulatory and other events with expected timing and sources. | Find upcoming catalysts for IBI363. |
+| Target competitive landscape | Find competing drugs, companies, indications and stages by normalized target; retain modality such as ADC and supported filters. | Compare TROP2 ADC competitors by drug, company and stage. |
+| Indication competitive landscape | Find covered competing drugs and stages by disease, treatment line, population and biomarkers. | Show the first-line EGFR-mutated NSCLC competitive landscape. |
+| Clinical evidence by indication | Retrieve covered studies, eligibility, regimens, arms, efficacy, safety and sources for AI comparison. | Compare covered first-line gastric cancer trials by PFS, OS and safety. |
+| Clinical evidence by drug | Find covered clinical studies for a drug, distinguishing indications, treatment lines and populations. | Find covered SKB264 clinical evidence by indication and treatment line. |
+| Treatment guidelines | Find covered guideline populations, recommended regimens and sources, retaining treatment-line criteria. | Find first-line NSCLC guideline recommendations and sources. |
+| Disease epidemiology | Retrieve covered epidemiology with geography, year, source and statistical definitions. | Find NSCLC epidemiology with geography, year and definitions. |
+| Clinical metric definitions | Retrieve covered clinical metric definitions and interpretation materials. | Explain PFS, OS and HR. |
+| Overseas drug sales | Query published annual sales and trends by drug, brand, company, target, geography and fiscal year; compare drugs. | Find historical aflibercept sales with currency, units and geography. |
+| Company valuation | Retrieve company valuations and parameters, prioritizing your saved company model with platform valuation as fallback. | Find Hengrui’s valuation results and parameters. |
+| Forecast drug peak sales | Read available forecast peak sales from valuation materials, retaining assumptions and distinguishing forecasts from actual sales. | Find forecast peak sales for Hengrui’s core drugs. |
+| Industry PS valuation tracking | Query A/H innovative-drug industry price-to-sales levels, historical trends, distributions and company comparisons. | Compare PS for Hengrui, BeOne and Innovent with industry percentiles. |
+| Sector valuation potential | Read published sector valuation conclusions, scenarios and data dates; obtain the valuation workbook when authorized. | Find innovative-drug sector valuation potential and obtain the available workbook. |
+| Sector holdings analysis | Read the latest published quarterly holdings summary and definitions; obtain the holdings workbook when authorized. | Find the latest published quarterly sector holdings and obtain the available workbook. |
+| Pipeline asset overview | Read company asset overviews and available distributions by stage, target and modality. | Show Betta Pharmaceuticals’ pipeline asset overview. |
+| Platform company selections | Retrieve published platform company selections and rationales, retaining publication dates. | Show the platform’s current innovative-drug company selections. |
+| Company research inputs | Retrieve available company research inputs such as financial consensus for AI company/report analysis; coverage depends on returned materials. | Get Hengrui research inputs and distinguish actual disclosures from forecasts. |
+| Announcement and event research inputs | Find available company announcements and text for an event topic, retaining title, date and source for AI analysis after reading. | Find and read Hengrui drug-approval announcements, then analyze the event. |
+| Overseas biopharma morning brief | Read the latest or dated published brief, covering company events and market movements separately; identify missing sections. | Read the latest overseas brief, separating company events and market movements. |
+| China prescribing information | Retrieve available Chinese label sections for indications, dosing, specifications and precautions. | Find Chinese camrelizumab prescribing information and dosing. |
+| China drug prices | Find available drug-price candidates with manufacturer, strength, packaging, geography, price basis and source. | Find Chinese camrelizumab prices by manufacturer, specification and price basis. |
+| China treatment costs | Combine Chinese labels, prices and the estimation framework; confirm dose, frequency, duration and price basis for AI calculation. | Find camrelizumab treatment costs in China; first show dosing and pricing assumptions for confirmation. |
+| US labels and packaging | Retrieve available DailyMed product labels, dosing and package candidates; distinguish originators, biosimilars and strengths. | Find US Eylea and Eylea HD labels, dosing and packaging. |
+| US annual WAC quotes | Find product quotes from the published annual WAC snapshot, including specification, date and pricing-verification status; not transaction or patient payment prices. | Find Eylea annual US WAC by specification, year and verification status. |
+| US treatment costs | Confirm product, indication, dose, frequency and duration; use verified annual WAC package pricing for server calculation. Missing prices remain gaps. | Find Keytruda US course and annual costs; first show regimens and package prices for confirmation. |
+| China patent expiry | Find covered Chinese drug patent registrations and expiry information with product, source and collection date. | Find Chinese patent registrations and expiry dates for osimertinib. |
+| US patent expiry | Query FDA Orange/Purple Book records and covered company disclosures, distinguishing products, patent expiry and regulatory exclusivity. | Find US aflibercept patent expiry and regulatory exclusivity by product. |
+| Stock technical analysis | Read available dated stock analysis, distinguishing confirmed patterns, pending structures and risk notes. | Find Hengrui’s latest technical analysis with confirmed and pending structures. |
+| Daily technical lists | Read available daily selection, watch and alert lists, preserving categories and data dates. | Show the latest technical selection, watch and alert lists. |
 
 [Bilingual query guide and examples](QUERY-GUIDE.md). Company valuation uses your saved model first, then platform valuation. A patent's expiry is not the end of all protection for a drug. Technical analysis does not promise future returns.
 
